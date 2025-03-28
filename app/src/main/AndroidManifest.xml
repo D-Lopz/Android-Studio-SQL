@@ -13,8 +13,14 @@
         android:theme="@style/Theme.Actividad_BD"
         tools:targetApi="31">
         <activity
-            android:name=".view.MainActivityBD"
-            android:exported="false" />
+            android:name="com.example.actividad_bd.view.MainActivityBD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

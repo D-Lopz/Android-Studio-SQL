@@ -2,12 +2,12 @@ package com.example.actividad_bd.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.actividad_bd.R;
 import com.example.actividad_bd.databinding.ActivityMainBdBinding;
+import com.example.actividad_bd.model.UsuarioDAO;
 
 public class MainActivityBD extends AppCompatActivity {
     private ActivityMainBdBinding binding;
@@ -22,9 +22,12 @@ public class MainActivityBD extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                binding.tvMessage.setText("Mensake desde el click del boton😉");
+                binding.tvMessage.setText("Mensaje desde el click del boton😉");
             }
         });
+        UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+        usuarioDAO.insertarUsuario("David", 19);
+        usuarioDAO.consultarUsuarios();
     }
 
 }
